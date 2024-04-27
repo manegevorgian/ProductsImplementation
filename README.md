@@ -6,23 +6,28 @@ This solution consists of two main projects: an API and a Background Service. Th
 
 ## Projects
 
-**1. ProductAPI**
+**1. ProductsApi**
 
-This ASP.NET API interacts with an Oracle database to manage product information. It supports operations to retrieve, add, and update product data, as well as to handle discounts through XML file processing.
+This ASP.NET API interacts with an MSSQL database to manage product information. It supports operations to retrieve, add, and update product data, as well as to handle discounts through XML file processing.
 
-**2. DiscountService**
+**2. ProductsService**
 
 A background service scheduled to run daily between 09:00 and 09:15. It checks for a corresponding XML discount file and applies discounts to products as specified.
 
+
+**3. ProductsCommon**
+
+Common project which will include the base logic and be referenced by 1st and 2nd projects.
+
 ## Features
 
-GetProduct: Retrieves all product data from the database.
+**GetProduct**: Retrieves all product data from the database.
 
-PostProduct: Adds or updates product data in the database.
+**PostProduct**: Adds or updates product data in the database.
 
-PostDiscount: Processes XML files to save discount information.
+**PostDiscount**: Processes XML files to save discount information.
 
-SetDiscount: Applies discounts from the day's XML file to the database. If the price is set to 0 or the file is not found, the discount is not applied.
+**SetDiscount**: Applies discounts from the day's XML file to the database. If the price is set to 0 or the file is not found, the discount is not applied.
 
 ## Technologies
 
